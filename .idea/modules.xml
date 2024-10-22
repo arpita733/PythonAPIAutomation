@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PythonAPIAutomaion.iml" filepath="$PROJECT_DIR$/.idea/PythonAPIAutomaion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PythonAPIAutomation.iml" filepath="$PROJECT_DIR$/.idea/PythonAPIAutomation.iml" />
     </modules>
   </component>
 </project>
