@@ -11,13 +11,18 @@ Tech Stack
 
 '''
 pip install requests pytest pytest-html faker allure-pytest jsonschema
+
 pip install requests pytest pytest-html allure-pytest faker jsonschema pytest-xdist python-dotenv pandas
+
 pip list
+
 pip freeze > requirements.txt
 
 pytest -s src/tests/test_sample.py --alluredir=allure_result
 
 allure serve allure_result 
+
+
 '''
 
 How to run your Testcase Parallel
