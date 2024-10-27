@@ -13,7 +13,11 @@ Tech Stack
 pip install requests pytest pytest-html faker allure-pytest jsonschema
 '''
 
-How to run your Testcase Parallel pip install pytest-xdist
+How to run your Testcase Parallel
+
+'''
+pip install pytest-xdist
+'''
 
 How to run the Basic Test with Allure report
 
