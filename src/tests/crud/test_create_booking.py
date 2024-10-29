@@ -1,5 +1,5 @@
 # API TestCase
-from http.client import responses
+from unittest import expectedFailure
 
 # URL -> API_Constants.py
 # headers -> Utils.py
@@ -7,17 +7,14 @@ from http.client import responses
 # HTTP POST -> api_request_wrapper.py
 # verification -> common_verification.py
 
-
 import allure
 import pytest
-import requests
 from src.helpers.api_requests_wrapper import post_request
-from src.helpers.common_verification import verify_http_status_code, verify_json_key_for_not_null
-from  src.constants.api_constants import APIConstants
+from src.constants.api_constants import APIConstants
 from src.helpers.payload_manager import payload_create_booking
+from src.helpers.common_verification import *
 from src.utils.utils import Utils
 import logging
-
 
 class TestCreateBooking():
     @pytest.mark.positive
@@ -36,8 +33,18 @@ class TestCreateBooking():
         )
         verify_http_status_code(response_data=response, expected_data=200)
         verify_json_key_for_not_null(response.json()["bookingid"])
+        '''
+        verify_response_key(response.json()["booking"]["firstname"])
+        LOGGER.info(response.json()["booking"]["firstname"],expected_data=None)
+        '''
         LOGGER.info(response.json()["bookingid"])
         LOGGER.info("End of the Testcase TC1 -positive")
+
+    payload = payload_create_booking()
+    first_item = list(payload.items())[0]  # Convert items to a list and access index 1
+    print(" print the first name",first_item)
+
+
 
     @pytest.mark.negative
     @allure.title("Verify that Create Booking doesn't work with no payload")
