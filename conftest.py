@@ -7,8 +7,9 @@ from src.utils.utils import Utils
 import allure
 import pytest
 
+
 @pytest.fixture(scope="session")
-def create_token():
+def create_token ( ) :
     response = post_request(
         url=APIConstants().url_create_token(),
         headers=Utils().common_headers_json(),
@@ -22,7 +23,7 @@ def create_token():
 
 
 @pytest.fixture(scope="session")
-def get_booking_id():
+def get_booking_id ( ) :
     response = post_request(url=APIConstants().url_create_booking(),
                             auth=None,
                             headers=Utils().common_headers_json(),
